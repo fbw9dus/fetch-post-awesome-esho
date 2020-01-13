@@ -16,6 +16,7 @@ let checkbox = document.querySelector('#checkbox')
 submitButton.addEventListener('click',myFunction)
 
  async function  myFunction(e){
+    try{
     e.preventDefault()
     alert('Thank you for submiting your details')
     
@@ -40,7 +41,11 @@ submitButton.addEventListener('click',myFunction)
 
     let string = JSON.stringify(request)
     
-    return console.log(string)
+    return console.log(string)}
+
+    catch(error){
+        alert('ERROR: DU HAST SCHEIßE GEBAUT')
+    }
 
     
 
