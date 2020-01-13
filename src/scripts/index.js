@@ -18,9 +18,23 @@ submitButton.addEventListener('click',myFunction)
  async function  myFunction(e){
     try{
     e.preventDefault()
+    
+
+    if(name.value.length <= 0){
+           name.style.borderColor = "red";
+          return alert('Write a name')
+    }else{
+        name = name.value
+    }
+
+    if(password.value.length < 8){
+        password.style.borderColor = "red"
+        return alert('Your Password is to short')
+    }else{
+        password = password.value
+    }
+    
     alert('Thank you for submiting your details')
-    
-    
 
     let url = 'https://jsonplaceholder.typicode.com/posts'
 
@@ -29,7 +43,7 @@ submitButton.addEventListener('click',myFunction)
         body: JSON.stringify({
             name:name.value,
             email:email.value,
-            password:password.value,
+            password:password,
             message:message.value,
             checkbox:checkbox.checked,
         }),
